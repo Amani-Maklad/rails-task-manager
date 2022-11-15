@@ -1,0 +1,19 @@
+<h1>💁‍♀️ Task: <%= @task.title %> </h1>
+
+<blockquote> <%= @task.details %> </blockquote>
+
+    <input type="checkbox" id="scales" name="scales" >
+    <label for="scales"><%= @task.completed %> This task is completed</label>
+
+<br>
+<br>
+<%= link_to "Back to list", tasks_path %>
+<br>
+<br>
+<%= link_to "Update task", tasks_edit_path %>
+<br>
+<br>
+<%= link_to "Delete task",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
